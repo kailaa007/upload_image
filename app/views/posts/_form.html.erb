@@ -1,0 +1,39 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <%= form.hidden_field :post_type, :value => "single" %>
+  <div class="field">
+    <%=label_tag 'upload only single JPEG file'%>
+  </div>
+  <div class="field">
+    <%= form.file_field :detail%>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= form_with(model: post, local: true) do |form| %>
+  <%= form.hidden_field :post_type, :value => "multiple" %>
+  <div class="field">
+    <%=label_tag 'upload multiple files'%>
+  </div>
+  <div class="field">
+    <%= form.file_field :detail, :multiple => true %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="field">
+    <%=label_tag 'upload only MP4 files'%>
+  </div>
+  <%= form.hidden_field :post_type, :value => "mp4" %>
+  <div class="field">
+    <%= form.file_field :detail%>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
